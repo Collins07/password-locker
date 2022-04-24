@@ -1,3 +1,7 @@
+
+
+from secrets import choice
+
 class User:
     userInfo = list()
     def __init__(self, userName, userPassword):
@@ -11,4 +15,7 @@ class User:
     def getUserPaswword(self):
         return self.userPaswword
     def __str__(self):
-        return ("%s %d"%())  
+        return ("%s %d"%(self.userName, self.userPassword))
+
+choice = 1
+user = User("", 0)
