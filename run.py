@@ -68,3 +68,14 @@ def main():
                 print("account or view?")
                 choose = input()
                 print("\n")
+                if choose == "account":
+                    print("Add your credentials Account")
+                    print("-"*30)
+                    accountusername = loginUsername
+                    print("Account Name")
+                    accountname = input()
+                    print("\n")
+                    print("To generate automatic password type 'generate' and to create new password type 'new'")
+                    decision = input()
+                    if decision == "generate":
+                        
