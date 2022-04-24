@@ -78,4 +78,36 @@ def main():
                     print("To generate automatic password type 'generate' and to create new password type 'new'")
                     decision = input()
                     if decision == "generate":
-                        
+                        characters = string.ascii_letters + string.digits
+                        accountpassword = "".join(choice(characters) for x in range (randint(6,16)))
+                        print(f"Password: {accountpassword}")
+                    elif decision == "new":
+                        print("Enter your password")
+                        accountpassword = input()
+                    else:
+                        print("Please Enter a valid choice")
+                        save_account(create_account(accountusername,accountname,accountpassword))
+                        print("\n") 
+                        print(f"Username: {accountusername}\n Account Name: {accountname}\nPassword: {accountpassword}")
+
+                elif choose == "view":
+                    if find_account(accountusername):
+                        print("Here are your accounts")
+                        print("-"*30)
+                        for user in display_accounts():
+                            print(f"Account: {user.accountname}\n Password: {user.accountpassword}\n\n")
+                    else:
+                        print("Invalid credentials!!")
+
+                else:
+                    print("PLEASE TRY AGAIN!!")
+                    print("\n")
+            else:
+                print("Incorrect INFO please try again!!")
+
+        else:
+            print("Kindly choose a valid option")
+            print("\n")
+
+if __name__ == "__main__":
+    main()
