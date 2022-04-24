@@ -30,7 +30,41 @@ def find_account(number):
     return Credentials.find_by_number(number)
 def display_accounts():
     return Credentials.display_accounts()
-    
 
-def main():
+
     
+def main():
+    while True:
+        print("Welcome to password locker, write signin or login to start")
+        print("signin or login")
+        option = input()
+        if option == "signin":
+            print("Create Account")
+            print("-"*10)
+            print("Enter your Firstname: ")
+            firstname = input()
+            print("Enter your Lastname: ")
+            lastname = input()
+            print("Set your username: ")
+            username = input()
+            print("Set your password: ")
+            password = input()
+            save_user(create_user(firstname,lastname, username, password))
+            print("Your account was created successfully. These are your account details:")
+            print("-"*10)
+            print(f"Name: {firstname} {lastname}\nUsername: {username}\nPassword: {password}")
+            print("\nGo to Login to access your account")
+            print("\n\n")
+
+        elif option == "login":
+            print("Your username: ")
+            loginUsername = input()
+            print("Your Password: ")
+            loginPassword = input()
+            if find_user(loginPassword):
+                print("\n")
+                print("To create multiple accounts type 'account' to view them type 'view")
+                print("-"*60)
+                print("account or view?")
+                choose = input()
+                print("\n")
