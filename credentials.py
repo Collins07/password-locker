@@ -16,7 +16,7 @@ class Credentials:
         Credentials.accounts.remove(self)
 
     @classmethod
-    def display_aacounts(cls):
+    def display_accounts(cls):
         """
         list of accounts
         """
